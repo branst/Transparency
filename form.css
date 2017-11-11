@@ -1,0 +1,812 @@
+/* 
+ * Debits Stylesheet
+ * @author: ndevalle
+ * @sections: $CHICO, $GENERAL, $RESPONSIVE
+ * @tags: 
+ * @usage: Press Ctrl + F and search for sections or tags
+ */
+
+
+/******************
+****** $CHICO *****
+*******************/
+
+a.sandbox-advice.mlv {
+    background: url("img?name=sandbox-badge-es.png") no-repeat scroll 0px 0px transparent;
+}
+
+a.sandbox-advice.mla {
+    background: url("img?name=sandbox-badge-es.png") no-repeat scroll 0px 0px transparent;
+}
+
+a.sandbox-advice.mlm {
+    background: url("img?name=sandbox-badge-es.png") no-repeat scroll 0px 0px transparent;
+}
+
+a.sandbox-advice.mlb {
+    background: url("img?name=sandbox-badge-pt.png") no-repeat scroll 0px 0px transparent;
+}
+
+a.sandbox-advice {
+    width: 115px;
+    height: 115px;
+    position: absolute;
+    z-index: 1000;
+    top: -2px;
+    opacity: .9;
+    filter: alpha(opacity=90);
+    text-decoration: none;
+}
+
+a.sandbox-advice:hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+body.sandbox.mlv {
+    background: url("img?name=sandbox-bkg-es.png") repeat scroll 0 0 transparent;
+}
+
+body.sandbox.mla {
+    background: url("img?name=sandbox-bkg-es.png") repeat scroll 0 0 transparent;
+}
+
+body.sandbox.mlm {
+    background: url("img?name=sandbox-bkg-es.png") repeat scroll 0 0 transparent;
+}
+
+body.sandbox.mlb {
+    background: url("img?name=sandbox-bkg-pt.png") repeat scroll 0 0 transparent;
+}
+
+/*.ch-dimmer{background-color:rgba(256,256,256,0.5)}*/
+
+.ch-form-row label {
+	width: 190px;
+	line-height: 18px;
+}
+
+.ch-form-row .ch-form-hint,
+.ch-form-actions,
+.tyc,
+.authorize  {
+	margin-left: 205px; /* label width + 15px */
+	clear: both; /* clear the floats */
+}
+
+h1 {
+	margin-bottom: 10px;
+}
+
+.ch-form,
+.ch-form-actions  {
+	margin-top: 10px;
+}
+
+.ch-form fieldset {
+	margin-bottom: 0;
+	margin-top: 10px;
+}
+
+fieldset#showSecurityCode {
+	margin-bottom: 0;
+	margin-top: 0px;
+}
+/* validators adjust to message */
+.ch-validation {
+	min-width: 100px;
+	width: auto;
+}
+
+/* radios and checkboxes */
+ .ch-form-row input[type=radio] + label, 
+ .ch-form-row input[type=checkbox] + label {
+  display: inline;
+ }
+
+/* --- Input Sizes --- */
+.extra-large {
+	width: 200px;
+}
+
+.large {
+	width: 150px;
+}
+
+.medium {
+	width: 100px;
+}
+
+.small {
+	width: 60px;
+}
+
+.extra-small {
+	width: 30px;
+}
+
+.ch-price {
+	white-space: nowrap;
+}
+
+/* Recurring Payments Styles */
+
+body {
+	margin: 5px auto;
+	min-width: 100px;
+	max-width: 920px;
+}
+
+.header{
+	border-bottom:#ccc solid 1px;
+	overflow: hidden;
+	padding-bottom: 5px;
+	height: 100px;
+}
+.header img{
+	float: left;
+	
+}
+
+.item-data{
+	    width: 135px;
+    /* top: 76px; */
+    padding: 15px;
+    float: left;
+    /* bottom: 15px; */
+    border: 3px 3px 3px 3px;
+    background: none repeat scroll 0 0 #eee;
+    margin-left: 10px;
+    margin-top: 10px;
+        height: 560px;
+	
+}
+.container{
+	float:left;
+	margin: 0 0 0 250px;
+	padding: 0px 20px;
+	position:absolute;
+}
+
+.container.debit {
+	margin-left: 0;
+	padding:0px 0px;
+}
+.processed{
+	color: #999999;
+    float: right;
+    font-size: 11px;
+    margin-top: 25px;
+    
+	
+}
+.processed span{
+	background: url("img?name=logoMP-horizontal.png") no-repeat;
+	text-indent:-31000px;
+	width:120px;
+	height:26px;
+	display: inline-block;
+}
+
+/* lone checkbox for authorization */
+.authorize {
+	clear: both;
+	font-size: 13px;
+	overflow: hidden;
+}
+.authorize input{
+	margin: 0 4px 0 0;
+	float: left;
+	width: 14px;
+
+}
+.ch-form-options.ch-form-required.authorize label {
+	float: left;
+	width: 80%;
+
+}
+fieldset {
+	width: 430px;
+	float: left;
+	clear: both;
+}
+.link-secundary{
+	margin-left: 10px;
+
+}
+
+.credit-card-images {
+	width: 150px;
+	float: left;
+}
+.ie7 .credit-card-images {
+	width: 150px;
+	float:none;
+	
+}
+
+.recurring{
+	color:#666;
+	margin: -5px;
+}
+/* card images */
+.card {
+	width: 142px;
+	height: 90px;
+	margin-top: 7px;
+}
+
+.back{
+	height: 65px;
+}
+.card.visa, .card.debvisa {
+	background: url("img?name=cards/visa-card.png") no-repeat;
+}
+
+.card.amex {
+	background: url("img?name=cards/amex-card.png") no-repeat;
+}
+
+.card.hipercard, .card.hiper {
+	background: url("img?name=cards/hipercard-card.png") no-repeat;
+}
+
+.card.aura {
+	background: url("img?name=cards/aura-card.png") no-repeat;
+}
+
+.card.master, .card.debmaster, .card.mercadopago_cc {
+	background: url("img?name=cards/master-card.png") no-repeat;
+}
+
+.card.cmr {
+	background: url("img?name=cards/cmr-card.png") no-repeat;
+}
+
+.card.cordial {
+	background: url("img?name=cards/cordial-card.png") no-repeat;
+}
+
+.card.cordobesa {
+	background: url("img?name=cards/cordobesa-card.png") no-repeat;
+}
+
+.card.elo {
+	background: url("img?name=cards/elo-card.gif") no-repeat;
+}
+
+.card.melicard {
+	background: url("img?name=cards/meli-card.png") no-repeat;
+}
+
+.card.diners {
+	background: url("img?name=cards/diners-card.png") no-repeat;
+}
+
+.card.cencosud {
+	background: url("img?name=cards/cencosud-card.gif") no-repeat;
+}
+
+.card.argencard {
+	background: url("img?name=cards/argencard-card.png") no-repeat;
+}
+
+.card.nativa {
+	background: url("img?name=cards/nativa-card.png") no-repeat;
+}
+
+.card.cabal, .card.debcabal {
+	background: url("img?name=cards/cabal-card.gif") no-repeat;
+}
+
+.card.visa.front,
+.card.amex.front,
+.card.hipercard.front, 
+.card.aura.front,
+.card.master.front,
+.card.debmaster.front,
+.card.mercadopago_cc.front,
+.card.cmr.front,
+.card.cordial.front,
+.card.cordobesa.front,
+.card.debvisa.front,
+.card.elo.front,
+.card.melicard.front,
+.card.cabal.front,
+.card.debcabal.front,
+.card.diners.front {
+	margin-top: 50px;
+	background-position: 0px 0px;
+}
+
+.card.visa.back,
+.card.amex.back,
+.card.hipercard.back,
+.card.aura.back,
+.card.master.back,
+.card.debmaster.back,
+.card.mercadopago_cc.back,
+.card.cmr.back,
+.card.cordial.back,
+.card.cordobesa.back,
+.card.debvisa.back {
+	background-position: 0px -90px;
+}
+
+.card.cabal.back, .card.debcabal.back {
+	background: url("img?name=cards/MLB-backs.gif") no-repeat;
+	background-position: 0px -50px;
+	height: 50px;
+}
+
+.card.elo.back {
+	background: url("img?name=cards/MLB-backs.gif") no-repeat;
+	background-position: 0px -250px;
+	height: 50px;
+}
+
+.card.melicard.back {
+	background: url("img?name=cards/MLB-backs.gif") no-repeat;
+	background-position: 0px -300px;
+	height: 50px;
+}
+
+.card.diners.back {
+	background: url("img?name=cards/MLB-backs.gif") no-repeat;
+	background-position: 0px -200px;
+	height: 50px;
+}
+
+.back-card-images{
+	display: inline-block;
+    float: none;
+    margin-left: 7px;
+    position: absolute;
+
+
+}
+.security-code .ch-form-hint{
+	width: 115px;
+}
+.security-code .ch-form-row{
+	display:inline-block;
+	position:relative;
+}
+
+.card.cencosud.front {
+	margin-top: 50px;
+	background-position: 0px 0px;
+}
+
+.card.cencosud.back {
+	background: url("img?name=cards/MLB-backs.gif") no-repeat;
+	background-position: 0px -200px;
+	height: 50px;
+}
+
+.card.argencard.front {
+	margin-top: 50px;
+	background-position: 0px 0px;
+}
+
+.card.argencard.back {
+	background: url("img?name=cards/MLB-backs.gif") no-repeat;
+	background-position: 0px 0px;
+	height: 50px;
+}
+
+.card.nativa.front {
+	margin-top: 50px;
+	background-position: 0px 0px;
+}
+
+.card.nativa.back {
+	background: url("img?name=cards/MLB-backs.gif") no-repeat;
+	background-position: 0px 0px;
+	height: 50px;
+}
+
+/* Payment method logos */
+.payMethod {
+	background: transparent url("img?name=payment-methods-logos.gif") no-repeat;
+	text-indent: -31000px; /* esconde el texto */ /*float:left;*/
+	display: inline-block;
+	margin: 0px 7px 0px 0px;
+}
+.payMethod.ch-hide{
+	display:none;
+}
+
+.payMethod.visa{
+	background-position: 0 0px;
+	width: 29px;
+	height: 19px
+}
+.payMethod.debvisa {
+	background-position: 0 0px;
+	width: 63px;
+	height: 19px
+}
+
+.payMethod.master, .payMethod.mercadopago_cc {
+	background-position: 0 -26px;
+	width: 29px;
+	height: 19px
+}
+
+.payMethod.cmr {
+	background: transparent url("img?name=payment-methods-default-ar.png") no-repeat;
+	background-position: 0 -950px;
+	width: 26px;
+	height: 19px
+}
+
+.payMethod.cordial {
+	background: transparent url("img?name=payment-methods-default-ar.png") no-repeat;
+	background-position: 0 -900px;
+	width: 39px;
+	height: 15px
+}
+
+.payMethod.cordobesa {
+	background: transparent url("img?name=payment-methods-default-ar.png") no-repeat;
+	background-position: 0 -1000px;
+	width: 40px;
+	height: 9px
+}
+
+.payMethod.debmaster {
+	background-position: 0 -26px;
+	width: 63px;
+	height: 19px
+}
+
+
+.payMethod.amex {
+	background-position: 0 -51px;
+	width: 24px;
+	height: 21px;
+}
+
+.payMethod.aura {
+	background-position: 0 -79px;
+	width: 29px;
+	height: 19px;
+}
+
+.payMethod.hipercard {
+	background-position: 0 -103px;
+	width: 36px;
+	height: 20px;
+}
+
+.payMethod.tarshop {
+	background-position: 0 -131px;
+	width: 29px;
+	height: 19px;
+}
+
+.payMethod.diners {
+	background-position: 0 -159px;
+	width: 32px;
+	height: 20px;
+}
+
+.payMethod.naranja {
+	background-position: 0 -190px;
+	width: 29px;
+	height: 18px;
+}
+
+.payMethod.argencard {
+	background-position: 0 -214px;
+	width: 30px;
+	height: 20px;
+}
+
+.payMethod.elo {
+	background-position: 0 -260px;
+	width: 20px;
+	height: 20px;
+}
+
+.payMethod.melicard {
+	background-position: 0 -283px;
+	width: 27px;
+	height: 19px;
+}
+
+.payMethod.cabal, .payMethod.debcabal {
+	background-position: 0 -305px;
+	width: 29px;
+	height: 19px;
+}
+.payMethod.sivale {
+	background-position: 0 -238px;
+	width: 41px;
+	height: 20px;
+}
+
+.payMethod.cencosud {
+	background-position: 0 -328px;
+	height: 19px;
+	width: 30px;
+}
+
+.payMethod.nativa {
+	background: transparent url("img?name=payment-methods-default-ar.png") no-repeat;
+	background-position: 0 -347px;
+	height: 20px;
+	width: 38px;
+}
+
+.ch-message-error.hiper-message {
+	background: url("img?name=icons.png") no-repeat
+}
+
+.ch-message-error.hiper-message {
+	border: none;
+}
+
+.ch-message-error.hiper-message {
+	background-color: none;
+	color: #333;
+	font-size: 13px
+}
+
+.ch-message-error.hiper-message {
+	padding: 2px 5px 2px 27px;
+	background-position: -175px -5px
+}
+
+.hiper-error-focus {
+	border: 1px solid #C62026 !important
+}
+
+.hiper-images {
+	background: url("img?name=hipercard-card16-big-st.gif")
+		no-repeat;
+	width: 336px;
+	height: 136px;
+	background-position: 0 -180px;
+	text-indent: -30000px;
+}
+
+.ch-message-error
+	{
+	background: url("img?name=icons.png") no-repeat;
+	border-radius: 3px 3px 3px 3px;
+	border-style: solid;
+	border-width: 1px;
+	margin: 0 0 5px;
+	padding: 8px 10px 8px 34px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* why is this here??
+.o, .ch-hide {
+display:none;
+} */
+
+.tyc {
+   	font-size: 10px;
+   	margin-top: 20px;
+}
+
+.tyc-recurring {
+   	font-size: 10px;
+   	margin-top: 24px;
+}
+
+/**********************
+****** $RESULT ********
+**********************/
+
+.result .box {
+	margin: 30px 40px;
+	padding: 20px 20px 20px 50px;
+}
+
+.box.error {
+	background: url("img?name=icon-error.png") no-repeat 15px 28px;
+
+}
+
+.box.ok {
+	background: url("img?name=icon-ok.png") no-repeat 15px 28px;
+	line-height: 30px;
+
+}
+
+.action {
+   text-align: center;
+   margin-top: 30px;
+}
+
+
+
+
+/* ======================
+===== $RESPONSIVE =======
+====================== */
+
+/* small screens */
+@media only screen and (max-width: 480px)  {
+
+	.processed{ 
+		display: none;
+	}
+
+	.ch-form-row label {
+		display: block;
+		text-align: left;
+		padding-bottom: 0;
+	}
+
+	.ch-form-row label em {
+		position: relative;
+		display: inline;
+		margin-left: 5px;
+		top: 0;
+	}
+
+	.extra-large,
+	.large,
+	.medium,
+	.small,
+	.extra-small {
+		width: 97%;
+	}
+
+	#docNumber {
+		width: 100px;
+	}
+
+	.ch-form-row .ch-form-hint,
+	.ch-form-actions,
+	.tyc,
+	.authorize  {
+		margin-left: 0px; /* label width + 15px */
+	}
+
+	fieldset {
+		width: 100%;
+	}
+
+}
+@media only screen and (max-width: 600px) {
+	/* stuff disappear */
+	.credit-card-images {
+		display: none;
+	}
+
+	.item-data {
+	    display: block;
+	    position: inherit;
+	    width: 92%;
+	    padding: 4%;
+	}
+
+	.container {
+		margin: 0;
+	}
+}
+@media only screen and (max-width: 800px) {
+	/* stuff disappear */
+	.credit-card-images {
+		display: none;
+	}
+}
+
+/* medium screens */
+@media only screen and (max-width: 960px) {
+	
+	body {
+		margin-top: 5px;
+	}
+
+	
+	.ch-btn-big, .ch-btn-big:focus {
+		font-size: 1.25em;
+	}
+}
+
+
+/* big screens */
+@media only screen and (min-width: 960px) {
+	
+	/* overwriting chico */
+	body {
+		font-size: 14px;
+	}
+
+	/* bigger inputs */
+	input, textarea, select[multiple], .ch-form-select-multiple {
+		padding: 8px 6px;
+		font-size: 16px;
+	}
+
+	input:focus, textarea:focus, select[multiple]:focus, .ch-form-select-multiple:focus,
+	form .ch-form-error:focus {
+		padding: 7px 5px;
+	}
+
+	select {
+		padding: 3px;
+	}
+
+	.ch-form-row {
+		padding: 4px 0;
+	}
+
+	/* bigger validators */
+	.ch-validation {
+		padding: 8px 5px 8px 25px;
+	}
+
+	.ch-validation:before {
+		top: 10px;
+	}
+
+	/* align validation cone */
+
+	.ch-cone.ch-points-ltrt [class^="ch-"][class$="-content"]:after,
+	.ch-cone.ch-points-rtlt [class^="ch-"][class$="-content"]:after {
+		top: 10px;
+	}
+
+	.ch-cone.ch-points-ltrt [class^="ch-"][class$="-content"]:before,
+	.ch-cone.ch-points-rtlt [class^="ch-"][class$="-content"]:before {
+		top: 9px;
+	}
+
+
+	.ch-form-row label,
+	.payment-detail dt {
+		width: 280px;
+		line-height: 18px;
+	}
+
+	.ch-form-row .ch-form-hint,
+	.ch-form-actions,
+	.tyc,
+	.authorize {
+		margin-left: 295px; /* label width + 25px */
+	}
+
+		/* --- Input Sizes --- */
+	.extra-large {
+		width: 200px;
+	}
+
+	.large {
+		width: 150px;
+	}
+
+	.medium {
+		width: 100px;
+	}
+
+	.small {
+		width: 60px;
+	}
+
+	.extra-small {
+		width: 40px;
+	}
+
+
+
+	/* ^titles */
+
+	h1 {
+		font-size: 22px;
+	}
+
+	fieldset  {
+		width: 530px;
+		
+	}
+
+}
+

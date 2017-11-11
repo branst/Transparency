@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulario de adhesion</title>
+	<link rel="stylesheet" type="text/css" href="form.css">
+	<link rel="stylesheet" type="text/css" href="form2.css">
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+<div class="header">
+	<img style="height:100px !important" src="logo.png">
+</div>
+
+<div class="item-data">
+		<div class="recurring">
+	
+	
+
+	
+	
+		<p class="ch-price">$ 150</p>
+		<p>Débito automático</p>
+		<p>
+			
+				Frecuencia: 
+				mensual
+			
+		</p>
+	
+
+	
+	
+		<p>Desde: 12/11/2017</p> 
+	
+	
+	
+</div>
+
+	</div>
+
+<div class="container">
+
+<h1>
+	Programa de Padrinazgo
+</h1>
+
+<div class="msgError"></div>
+
+
+
+
+
+<form class="ch-form" id="creditCardForm" action="javascript:callJsonp()" method="post" target="_self" novalidate="novalidate">
+
+	<input name="cardId" id="cardId" type="hidden" value="">
+	<input name="formDataId" id="formDataId" type="hidden" value="">
+	<input name="siteId" id="siteId" type="hidden" value="MLA">
+	<input name="orguseridp" id="orguseridp" type="hidden" value="">
+	<input name="collid" id="collid" type="hidden" value="251646181">
+	<input name="preapprovalId" id="preapprovalId" type="hidden" value="">
+	<input name="preapprovalPlanId" id="preapprovalPlanId" type="hidden" value="193c11eb9c134123837c44072fb98874">
+	<input name="paymentTypeId" id="paymentTypeId" type="hidden" value="credit_card">
+	<input name="applicationId" id="applicationId" type="hidden" value="3909856389923111">
+	<input name="useCallback" id="useCallback" type="hidden" value="false">
+	<input name="fromFront" id="fromFront" type="hidden" value="">
+	<input name="cardIssuerId" id="cardIssuerId" type="hidden" value="">
+	
+	<input name="deviceId" id="deviceId" type="hidden" value="623d6f0f-b912-da61-dd0c-5845e0da264c">
+	<input name="dps" id="dps" type="hidden" value="armor.27ced9bf4ce53852d5a28d6b0a84d8609443af2a315d89aaaefeda118a7def9ed55c157c9813dae60a6b808519c96a09b1c3a95826370e7a8d543a252006c94bf0cc9c95f8422c5186eba1bb765d1262.6e867b89263ff68c17f574e521e94208">
+
+	<p class="ch-form-hint">*Datos obligatorios</p>
+	
+	
+
+	<fieldset>
+		<p class="ch-form-row ch-form-required">
+			<label for="paymentMethod">Tarjeta de crédito:<em>*</em></label>
+			<select name="paymentMethod" class="ch-points-ltrt" id="paymentMethod">
+				<option value="-1">Elige</option>
+						<option value="visa">Visa</option>
+						<option value="master">Mastercard</option>
+						<option value="amex">American Express</option>
+						<option value="mercadopago_cc">Mercado Pago + Banco Patagonia</option>
+						<option value="nativa">Nativa Mastercard</option>
+						<option value="cabal">Cabal</option>
+						<option value="cencosud">Cencosud</option>
+						<option value="diners">Diners</option>
+						<option value="argencard">Argencard</option>
+						<option value="debcabal">Cabal Débito</option>
+						<option value="cordobesa">Cordobesa</option>
+						<option value="cordial">Tarjeta Walmart</option>
+						<option value="cmr">CMR</option>
+			</select>
+		</p>
+
+		<p class="ch-form-row ch-form-required">
+			<label for="NumberCreditCard">Número: <em>*</em></label>
+			<input name="cardNumber" class="extra-large ch-points-ltlb ch-points-ltrt" id="cardNumber" required="required" type="text" maxlength="23" value="" autocomplete="off">
+		</p><p>
+
+		</p><p class="ch-form-row ch-form-required">
+			<label>Fecha de vencimiento:<em>*</em></label> 
+			<select name="cardExpirationMonth" class="ch-points-ltlb" id="cardExpirationMonth" optionkey="id"><option value="-1"> Mes</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select> / 
+			<select name="cardExpirationYear" class="ch-points-ltrt" id="cardExpirationYear" optionkey="id"><option value="-1"> Año</option><option value="2017">17</option><option value="2018">18</option><option value="2019">19</option><option value="2020">20</option><option value="2021">21</option><option value="2022">22</option><option value="2023">23</option><option value="2024">24</option><option value="2025">25</option><option value="2026">26</option><option value="2027">27</option><option value="2028">28</option><option value="2029">29</option><option value="2030">30</option><option value="2031">31</option></select>
+		</p>
+			
+		<p class="ch-form-row ch-form-required">
+			<label for="cardHolderName">Nombre y apellido:<em>*</em></label> 
+			<input name="cardholderName" class="extra-large ch-points-ltrt" id="cardholderName" required="required" type="text" maxlength="50" value="">
+		</p>
+
+		
+			<div class="ch-form-row ch-form-required" style="white-space: nowrap">
+				<label>Documento:<em>*</em></label>
+				<select name="docType" id="docType" optionkey="id"><option value="DNI">DNI</option><option value="CI">Cédula</option><option value="LC">L.C.</option><option value="LE">L.E.</option><option value="Otro">Otro</option></select> 
+				
+				<input name="docNumber" class="medium ch-points-ltrt" id="docNumber" type="text" maxlength="20" value="">
+			</div>
+		
+
+		
+			<p class="ch-form-row ch-form-required">
+				<label>E-mail:<em>*</em></label>
+				<input name="payerEmail" class="extra-large ch-points-ltrt" id="payerEmail" required="required" type="text" maxlength="100" value="">
+			</p>
+		
+
+		
+		
+	</fieldset>
+
+	<div class="credit-card-images">
+		<div class="card front" id="frontCard"></div>
+	</div>	
+		
+		<fieldset id="showSecurityCode">
+			<p class="ch-form-row ch-form-required">			
+				<label class="required" for="securityCode">Código de seguridad: <em>*</em></label>													
+				<input name="securityCode" class="extra-small ch-points-ltrt" id="securityCode" required="required" type="text" maxlength="4" value="" autocomplete="off">
+					<span class="ch-form-hint" id="showMge4" style="display: none;"> Ingresa los 4 números.</span>
+					<span class="ch-form-hint" id="showMge3" style="display: none;"> Últimos 3 números que están al dorso.</span>
+			</p>
+		</fieldset>
+ 	 
+		<div class="credit-card-images">
+			<div class="card back" id="backCard"></div>
+		</div>
+
+	
+
+	<div class="ch-form-options ch-form-required authorize">
+		<p class="ch-form-row">
+			<input name="authorize" class="ch-points-ltlb" id="authorize" required="required" type="checkbox">
+           	<label for="authorize">Autorizo que los pagos a Débitos Automáticos de Transparency se debiten automáticamente de mi tarjeta de crédito.</label>
+		</p>
+	</div>	
+	
+	<p class="ch-hide ch-points-ltlb" id="hiperdcardTip" aria-describedby="ch-layer-1" style="cursor: pointer;"></p>	
+
+	
+
+	<p class="ch-form-actions">
+          <input class="ch-btn ch-btn-big" id="suscribirse" type="submit" value="Confirmar débito automático">
+    </p>
+  
+    
+	<div class="tyc-recurring">
+
+	Al continuar, afirmo que soy mayor de edad y acepto los <a title="Términos" href="" target="_blank" condiciones="" y="">Términos y Condiciones</a> y las <a title="Políticas" href="" target="_blank" privacidad="" de="">Políticas de Privacidad</a> de Transparency.
+</div>
+
+
+</form>
+</div>
+
+
+<script type="text/javascript">
+	
+	$("#suscribirse").click(function() {
+
+  var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.bancogalicia.com.ar/apiTransfer/Transfer?apikey=l7xx1069b7140aed41e595032a79929a2d1e",
+  "method": "POST",
+  "headers": {
+    "content-type": "application/json",
+    "cache-control": "no-cache",
+    "postman-token": "6ec1a270-f184-4e8e-5046-7c182a995ada"
+  },
+  "processData": false,
+  "data": "{\r\n\t\"Type\": \"Inmediata\",\r\n\t\"Transaction_Date\": \"2017-08-23T00:36:19\",\r\n\t\"Status\": \"Ejecutado\",\r\n\t\"Medium\": \"Balance\",\r\n\t\"Player_Id\": \"0214012\",\r\n\t\"Payee_Id\": \"035bd39e-75f9-4ce6-bda6-a32729081e2e\",\r\n\t\"Amount\": 10000,\r\n\t\"Description\": \"Test Transfer\"\r\n}"
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+});
+</script>
+
+</body>
+</html>
