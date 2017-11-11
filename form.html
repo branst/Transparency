@@ -162,7 +162,7 @@
 </form>
 </div>
 
-
+<script type="text/javascript" src="moment.js"></script>
 <script type="text/javascript">
 	
 	$("#suscribirse").click(function() {
@@ -173,7 +173,7 @@
 
 data = {
 	Type: "Inmediata",
-	Transaction_Date: datef,
+	Transaction_Date:moment().format('YYYY-MM-DDTHH:mm:ss'),
 	Status: "Ejecutado",
 	Medium: "Balance",
 	Player_Id: "1e373662-a193-4996-9968-3b087b51fb9d",
@@ -198,13 +198,14 @@ data = {
 
 
 
-
-
 $.ajax(settings).done(function (response) {
   console.log(response);
 });
 });
 </script>
+
+
+
 
 </body>
 </html>
