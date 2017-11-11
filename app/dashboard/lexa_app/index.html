@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+
+    <style media="screen">
+    /* http://meyerweb.com/eric/tools/css/reset/
+       v2.0 | 20110126
+       License: none (public domain)
+    */
+
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup,
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section {
+      display: block;
+    }
+    body {
+      line-height: 1;
+    }
+    ol, ul {
+      list-style: none;
+    }
+    blockquote, q {
+      quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+      content: '';
+      content: none;
+    }
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    </style>
+
+    <style>
+      body {
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 100;
+        font-family: 'Open Sans';
+        background: #f3f3f3;
+      }
+
+      .take-picture {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background: #00adff;
+      }
+
+      .big {
+        font-size: 22px;
+      }
+
+      .bold {
+        font-weight: 900;
+      }
+
+      .loading {
+        position: absolute;
+        background: #007eff;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        width: 100%;
+      }
+
+      .small-loading {
+        position: absolute;
+        background: #007eff;
+        height: 100px;
+        top: 25%;
+        border-radius: 15px;
+        left: 35%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        width: 100px;
+        display: none;
+      }
+
+      .profile {
+        text-align: center;
+        background: white;
+        box-sizing: border-box;
+        display: none;
+        padding: 20px;
+        width: 100%;
+        border-bottom: 1px solid grey;
+      }
+
+      .forms {
+        text-align: center;
+        box-sizing: border-box;
+        padding: 40px;
+        padding-top: 20px;
+      }
+
+      .form {
+        margin-top: 25px;
+        width: 100%;
+      }
+
+      .form input {
+        margin: 10px 0;
+        padding: 10px;
+        padding-left: 20px;
+        border-radius: 5px;
+        box-sizing: border-box;
+        outline: none;
+        border: 1px solid grey;
+        font-size: 24px;
+        width: 100%;
+      }
+
+      .form button {
+        font-size: 20px;
+        margin-top: 20px;
+        background: #00adff;
+        border: none;
+        border-radius: 10px;
+        outline: none;
+        color: white;
+        padding: 10px 20px;
+      }
+
+      .form * {
+        text-align: left;
+        display: block;
+      }
+
+      input[name=imag] {
+        position: absolute;
+        height: 80px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+        opacity: 0;
+      }
+
+      #success-message {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: lightgreen;
+        width: 300px;
+        height: 70px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        border: 1px solid green;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="loading">
+      <span class="bold big">lexa</span>
+      <img height="40" style="margin-top: 30px"src="https://media.giphy.com/media/9xITUvIm9K3te/giphy.gif" alt="">
+    </section>
+
+    <div id="success-message">Receta creada exitosamente</div>
+    <iframe src="" name="iframe" style="display: none;" id="iframe" width="" height=""></iframe>
+
+    <section class="small-loading">
+      <img height="40" style="margin-top: 30px; margin-left: 28px;"src="https://media.giphy.com/media/9xITUvIm9K3te/giphy.gif" alt="">
+    </section>
+
+    <section class="take-picture">
+      <form id="file-form" enctype="multipart/form-data" method="post" target="iframe">
+        <input type="file" accept="image/*" name="imag" capture="camera">
+      </form>
+      <span class="bold">Escanear DNI</span>
+    </section>
+
+    <section class="profile">
+      <span class="bold" name="name">Ramiro hernan olivera fedi</span>
+      <span class="big" name="dni">38995370</span>
+    </section>
+
+    <section class="forms">
+      <span class="bold">Cargá los medicamentos y las dosis para el paciente</span>
+      <form class="form" method="post">
+        <label for="med">Medicamento</label>
+        <input required type="text" name="med" value="">
+        <label for="dose">Dosis</label>
+        <input required type="text" name="dose" value="">
+        <label for="comment">Comentario</label>
+        <input required type="text" name="comment" value="">
+        <button type="button" id="submit-form" name="button">Agregar receta</button>
+      </form>
+    </section>
+    <!-- <input type="file" accept="image/*" capture="camera"> -->
+
+    <script type="text/javascript">
+      function updateUser (data) {
+        var name = $('span[name=name]');
+        var dni = $('span[name=dni]');
+
+
+        name.text((data.firstName || "") + " " + (data.lastName || ""));
+        dni.text(data.dni);
+        $('.take-picture').fadeOut();
+        $('.profile').fadeIn();
+      }
+
+      $(document).ready(function () {
+          const message = $("#success-message");
+          message.hide();
+
+          $('#submit-form').click(function() {
+            var med = $('input[name=med]').val();
+            var dose = $('input[name=dose]').val();
+            var comment = $('input[name=comment]').val();
+
+            var json = {
+              data: {
+                doctor: 'Guillermo Rauch',
+                droga: med,
+                dosis: dose,
+                hashUsuario: "A3Ed@5ccs68Lk9",
+                comentario: comment,
+                status: true
+              }
+            }
+
+              $.ajax({
+                url: 'http://ba1c2423.ngrok.io/mineBlock',
+                type:"POST",
+                data:JSON.stringify(json),
+                contentType:"application/json; charset=utf-8",
+                dataType:"json",
+                success: () => {
+                  message.show();
+                  setTimeout(() => message.hide(), 3000)
+                },
+                error: () => {
+                  message.show();
+                  setTimeout(() => message.hide(), 3000)
+                }
+              })
+
+          });
+
+          window.setTimeout(function() {
+            $('.loading').fadeOut();
+          }, 2 * 1000);
+
+          $("input[name=imag]").on('change', function(value) {
+            $('.small-loading').fadeIn();
+
+            window.setTimeout(function() {
+              var data = {
+                firstName: 'Julian Miguel',
+                lastName: 'Antonielli',
+                dni: 38820402
+              };
+              updateUser(data);
+              $('.small-loading').fadeOut();
+            }, 2 * 1000);
+            // var file = $("input[name=imag]")[0].files[0]
+            // var form = new FormData();
+            //   form.append("image", file);
+            //
+            //   var settings = {
+            //     "async": true,
+            //     "crossDomain": true,
+            //     "url": "https://api.imgur.com/3/image",
+            //     "method": "POST",
+            //     "headers": {
+            //       "authorization": "Client-ID 62caf246517f766"
+            //     },
+            //     "processData": false,
+            //     "contentType": false,
+            //     "mimeType": "multipart/form-data",
+            //     "data": form
+            //   }
+            //
+            //   $.ajax(settings).done(function (response) {
+            //     var res = JSON.parse(response);
+            //     $.get('https://lexa-tojemtfjeu.now.sh/url?url=' + encodeURIComponent(res.data.link), function(data) {
+            //
+            //       updateUser(data);
+            //       $('.small-loading').fadeOut();
+            //     })
+            //   });
+          });
+        });
+    </script>
+
+  </body>
+</html>

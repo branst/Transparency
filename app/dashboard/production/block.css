@@ -1,0 +1,31 @@
+.block {
+	background-color: white;
+	padding: 5px;
+	margin: 30px;
+	float: left;
+	border: solid;
+	position:relative;
+}
+
+#chain {
+	margin-top: 10px;
+	height: 200px;
+}
+
+.hash {
+	float: right;
+}
+
+.contenedor{
+	position: relative;
+}
+
+#img{
+    position: absolute;
+    top: 100px;
+    background: url('./chain.jpg');
+	background-repeat: repeat-x;
+	height: 100px;
+	width: 100%;
+
+}
