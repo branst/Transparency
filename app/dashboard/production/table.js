@@ -103,7 +103,7 @@ class App extends React.Component {
 		return this.state.account && this.state.transfers ? (
 			<div>
 				<div style={{display: 'inline-block'}}>
-					<span>Reportes de salidas y entrada</span>
+					<span>Reportes de salidas</span>
 					<AreaChart width={700} height={250} data={formatData(this.state.transfers)}
 					  margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
 					  <defs>
