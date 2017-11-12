@@ -34,7 +34,7 @@ class Row extends React.Component {
 				<td>{description}</td>
 				<td>{date}</td>
 				<td>{type}</td>
-				<td>{verified ? <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Ski_trail_rating_symbol-green_circle.svg" height="20" width="20"/> : "mal"}</td>
+				<td>{description !== 'Privado' ? <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Ski_trail_rating_symbol-green_circle.svg" height="20" width="20"/> : <img style={{ marginLeft: '-3px' }} src="http://www.ddivani.com/images/dot.png" height="20" width="27"/>}</td>
 			</tr>
 		);
 	}
