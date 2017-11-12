@@ -1,4 +1,4 @@
-const { PieChart, Pie, Legend, Tooltip, Cell, AreaChart, XAxis, YAxis, CartesianGrid, Area } = Recharts;
+const { PieChart, Pie, Legend, Tooltip, Cell, AreaChart, XAxis, YAxis, CartesianGrid, Area, BarChart, Bar } = Recharts;
 
 const data = [
 	{ name: 'Group A', value: 400 },
@@ -35,7 +35,7 @@ const formatData = data => {
 const PieThing = ({ data }) => {
 	const formattedData = formatData(data);
 	return (
-		<div style={{display: 'inline-block'}}>
+		<div style={{display: 'inline-block', verticalAlign: 'top'}}>
 			<span>Gastos categorizados</span>
 			<PieChart width={400} height={250}>
 				<Pie

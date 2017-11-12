@@ -78,10 +78,25 @@ const formatData = (data = []) => {
 
 const formatForTable = (data) => {
 	const arr = data.map((dat) => ({ ...dat, date: moment(dat.Transaction_Date) }));
-	const solved = _.sortBy(arr, 'date').map(dat => {
-		return {...dat, ...{ date: dat.date.format('DD/MM/YYYY'), verified: true }}
-	})
-	return solved;
+	const solved = _.sortBy(arr, 'date')
+	return solved.map(dat => {
+		return {...dat, date: dat.date.format('DD/MM/YYYY'), verified: true };
+	});
+}
+
+const groupIncomingByDate = (data) => {
+	const aux = _.groupBy(data, 'date');
+	const res = [];
+	Object.keys(aux).forEach(key => {
+		const obj = {
+			Importe: aux[key].reduce((ac, el) => ac + el.Importe ,0),
+			date: key
+		};
+
+		res.push(obj);
+	});
+
+	return res;
 }
 
 class App extends React.Component {
@@ -93,7 +108,7 @@ class App extends React.Component {
 	componentWillMount() {
 		getAccountById(accountId).then(account => this.setState({ account }));
 		getAccountTransfersById(accountId).then(transfers => {
-			this.setState({ transfers: getOutcomingTransfers(accountId, transfers)  });
+			this.setState({ transfers: getOutcomingTransfers(accountId, transfers), incomingTransfers: getIncomingTransfers(accountId, transfers)  });
 			window.transfers = transfers;
 		});
 	}
@@ -102,9 +117,21 @@ class App extends React.Component {
 		console.log()
 		return this.state.account && this.state.transfers ? (
 			<div>
+				<div style={{display: 'inline-block', verticalAlign: 'top'}}>
+					<span>Reportes de entradas</span>
+					<BarChart width={480} height={300} data={formatForTable(formatData(this.state.incomingTransfers))}
+								margin={{top: 5, right: 30, left: 20, bottom: 5}}>
+					 <XAxis dataKey="date" hide={true}/>
+					 <YAxis/>
+					 <CartesianGrid strokeDasharray="3 3"/>
+					 <Tooltip/>
+					 <Legend />
+					 <Bar dataKey="Importe" fill="#03c39f" />
+					</BarChart>
+				</div>
 				<div style={{display: 'inline-block'}}>
 					<span>Reportes de salidas</span>
-					<AreaChart width={700} height={250} data={formatData(this.state.transfers)}
+					<AreaChart width={480} height={275} data={formatData(this.state.transfers)}
 					  margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
 					  <defs>
 					    <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
