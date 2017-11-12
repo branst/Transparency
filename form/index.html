@@ -16,7 +16,7 @@
 
 <div class="item-data">
 		<div class="recurring">
-		<p class="ch-price">$ 150</p>
+		<p class="ch-price">$ 1600</p>
 		<p>Débito automático</p>
 		<p>
 		Frecuencia: mensual
@@ -32,7 +32,7 @@
 <div class="msgError"></div>
 <form class="ch-form" id="creditCardForm" action="javascript:callJsonp()" method="post" target="_self" novalidate="novalidate">
 
-	<input name="cardId" id="cardId" type="hidden" value="">
+	<input name="cardId" id="cardId" type="hidden" value="4444555566661111">
 	<input name="formDataId" id="formDataId" type="hidden" value="">
 	<input name="siteId" id="siteId" type="hidden" value="MLA">
 	<input name="orguseridp" id="orguseridp" type="hidden" value="">
@@ -53,8 +53,7 @@
 		<p class="ch-form-row ch-form-required">
 			<label for="paymentMethod">Tarjeta de crédito:<em>*</em></label>
 			<select name="paymentMethod" class="ch-points-ltrt" id="paymentMethod">
-				<option value="-1">Elige</option>
-				<option value="visa">Visa</option>
+				<option value="-1">Visa</option>
 				<option value="master">Mastercard</option>
 				<option value="amex">American Express</option>
 				<option value="mercadopago_cc">Mercado Pago</option>
@@ -65,18 +64,18 @@
 
 		<p class="ch-form-row ch-form-required">
 			<label for="NumberCreditCard">Número: <em>*</em></label>
-			<input name="cardNumber" class="extra-large ch-points-ltlb ch-points-ltrt" id="cardNumber" required="required" type="text" maxlength="23" value="" autocomplete="off">
+			<input name="cardNumber" class="extra-large ch-points-ltlb ch-points-ltrt" id="cardNumber" required="required" type="text" maxlength="23" value="4546159408441594" autocomplete="off">
 		</p><p>
 
 		</p><p class="ch-form-row ch-form-required">
 			<label>Fecha de vencimiento:<em>*</em></label> 
-			<select name="cardExpirationMonth" class="ch-points-ltlb" id="cardExpirationMonth" optionkey="id"><option value="-1"> Mes</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select> / 
-			<select name="cardExpirationYear" class="ch-points-ltrt" id="cardExpirationYear" optionkey="id"><option value="-1"> Año</option><option value="2017">17</option><option value="2018">18</option><option value="2019">19</option><option value="2020">20</option><option value="2021">21</option><option value="2022">22</option><option value="2023">23</option><option value="2024">24</option><option value="2025">25</option><option value="2026">26</option><option value="2027">27</option><option value="2028">28</option><option value="2029">29</option><option value="2030">30</option><option value="2031">31</option></select>
+			<select name="cardExpirationMonth" class="ch-points-ltlb" id="cardExpirationMonth" optionkey="id"><option value="-1"> 01</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select> / 
+			<select name="cardExpirationYear" class="ch-points-ltrt" id="cardExpirationYear" optionkey="id"><option value="2018"> Año</option><option value="2017">17</option><option value="2018">18</option><option value="2019">19</option><option value="2020">20</option><option value="2021">21</option><option value="2022">22</option><option value="2023">23</option><option value="2024">24</option><option value="2025">25</option><option value="2026">26</option><option value="2027">27</option><option value="2028">28</option><option value="2029">29</option><option value="2030">30</option><option value="2031">31</option></select>
 		</p>
 			
 		<p class="ch-form-row ch-form-required">
 			<label for="cardHolderName">Nombre y apellido:<em>*</em></label> 
-			<input name="cardholderName" class="extra-large ch-points-ltrt" id="cardholderName" required="required" type="text" maxlength="50" value="">
+			<input name="cardholderName" class="extra-large ch-points-ltrt" id="cardholderName" required="required" type="text" maxlength="50" value="Ramiro Olivera">
 		</p>
 
 		
@@ -84,12 +83,12 @@
 				<label>Documento:<em>*</em></label>
 				<select name="docType" id="docType" optionkey="id"><option value="DNI">DNI</option><option value="CI">Cédula</option><option value="LC">L.C.</option><option value="LE">L.E.</option><option value="Otro">Otro</option></select> 
 				
-				<input name="docNumber" class="medium ch-points-ltrt" id="docNumber" type="text" maxlength="20" value="">
+				<input name="docNumber" class="medium ch-points-ltrt" id="docNumber" type="text" maxlength="20" value="38831123">
 			</div>
 		
 			<p class="ch-form-row ch-form-required">
 				<label>E-mail:<em>*</em></label>
-				<input name="payerEmail" class="extra-large ch-points-ltrt" id="payerEmail" required="required" type="text" maxlength="100" value="">
+				<input name="payerEmail" class="extra-large ch-points-ltrt" id="payerEmail" required="required" type="text" maxlength="100" value="ramiro.olivera@gmail.com">
 			</p>
 	</fieldset>
 
