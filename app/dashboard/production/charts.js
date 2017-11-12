@@ -1,4 +1,4 @@
-const { PieChart, Pie, Legend, Tooltip, Cell } = Recharts;
+const { PieChart, Pie, Legend, Tooltip, Cell, AreaChart, XAxis, YAxis, CartesianGrid, Area } = Recharts;
 
 const data = [
 	{ name: 'Group A', value: 400 },
@@ -10,18 +10,38 @@ const data = [
 ];
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+const formatData = data => {
+	const obj = _.groupBy(data, 'Description');
+	console.log(obj);
+
+	const formatted = [];
+
+	Object.keys(obj).forEach((key) => {
+		obj[key] = obj[key].reduce((acc, el) => {
+			return acc + el.Amount;
+		}, 0);
+
+		const auxObj = {
+			name: key,
+			value: obj[key]
+		};
+
+		formatted.push(auxObj);
+	});
+
+	return formatted;
+};
 
 const PieThing = ({ data }) => {
-	debugger;
+	const formattedData = formatData(data);
 	return (
-		<div>
+		<div style={{display: 'inline-block'}}>
 			<span>Gastos categorizados</span>
-			<PieChart width={800} height={400}>
+			<PieChart width={400} height={250}>
 				<Pie
-					isAnimationActive={false}
-					data={data}
-					cx={200}
-					cy={200}
+					data={formattedData}
+					cx={130}
+					cy={130}
 					outerRadius={80}
 					fill="#8884d8"
 					label
